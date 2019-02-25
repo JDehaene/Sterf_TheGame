@@ -12,6 +12,8 @@ public class GullBehaviour : MonoBehaviour {
     private float _ascendSpeed;
     [SerializeField]
     private float _turnSpeed;
+    [SerializeField]
+    private float _maxSpeed;
 
     private Camera _cam;
     private CharacterController _c;
