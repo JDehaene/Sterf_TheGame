@@ -5,7 +5,7 @@ using UnityEngine;
 public class GullBehaviour : MonoBehaviour {
 
     [SerializeField]
-    private float _flightSpeed;
+    private float _acceleration;
     [SerializeField]
     private float _descendSpeed;
     [SerializeField]
@@ -15,6 +15,7 @@ public class GullBehaviour : MonoBehaviour {
 
     private Camera _cam;
     private CharacterController _c;
+    private Vector3 _velocity;
   
 	void Start ()
     {
@@ -24,6 +25,42 @@ public class GullBehaviour : MonoBehaviour {
 
 	void Update ()
     {
-        _c.Move(_velocity);
+        HandleInput();
+        ForwardVelocity();
+        MaxFlyingSpeed();
+        Turning();
+        AscendDescend();
+        Dive();
+
 	}
+    private void FixedUpdate()
+    {
+        _c.Move(_velocity);
+    }
+
+    void HandleInput()
+    {
+
+    }
+    void ForwardVelocity()
+    {
+        _velocity += Vector3.forward * _acceleration * Time.deltaTime;
+    }
+    void MaxFlyingSpeed()
+    {
+
+    }
+    void Turning()
+    {
+
+    }
+    void AscendDescend()
+    {
+
+    }
+    void Dive()
+    {
+
+    }
 }
+
