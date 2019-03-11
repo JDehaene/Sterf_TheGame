@@ -28,12 +28,12 @@ public class GullBehaviour : MonoBehaviour {
     private float _turnSpeedIncrease;   
     private float _rotationY;
     private float _rotationZ;
+
     private Quaternion _currentYRotation;
     private Quaternion _prevRotation;
 
     private bool _turning;
-    private bool _movingUp;
-    private bool _movingDown;
+
     
 
     void Start ()
