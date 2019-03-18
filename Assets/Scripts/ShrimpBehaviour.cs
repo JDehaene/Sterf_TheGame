@@ -7,8 +7,6 @@ public class ShrimpBehaviour : MonoBehaviour {
     [SerializeField]
     private float _acceleration;
     [SerializeField]
-    private float _heightSpeed;
-    [SerializeField]
     private float _turnSpeed;
     [SerializeField]
     private float _maxSpeed;

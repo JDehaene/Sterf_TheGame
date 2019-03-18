@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GullBehaviour : MonoBehaviour {
+public class OrcaBehaviour : MonoBehaviour
+{
 
     [SerializeField]
     private float _acceleration;
@@ -23,10 +24,10 @@ public class GullBehaviour : MonoBehaviour {
     private Vector3 _movement;
     private Vector3 _velocity = Vector3.zero;
 
-    private float _horizInput;
-    private float _vertInputL;
+    private float _horizInputL;
     private float _vertInputR;
-    private float _turnSpeedIncrease;   
+    private float _vertInputL;
+    private float _turnSpeedIncrease;
     private float _rotationY;
     private float _rotationZ;
 
@@ -35,14 +36,14 @@ public class GullBehaviour : MonoBehaviour {
 
     private bool _turning;
 
-    
 
-    void Start ()
+
+    void Start()
     {
         _c = GetComponent<CharacterController>();
-	}
+    }
 
-	void Update ()
+    void Update()
     {
         _currentYRotation = this.transform.rotation;
 
@@ -51,7 +52,6 @@ public class GullBehaviour : MonoBehaviour {
         MaxFlyingSpeed();
         Turning();
         AscendDescend();
-        Dive();
 
         _c.Move(_velocity);
     }
@@ -59,15 +59,19 @@ public class GullBehaviour : MonoBehaviour {
     void HandleInput()
     {
 
-        _horizInput = Input.GetAxis("HorizontalL");
-        _vertInputL = Input.GetAxis("VerticalL");
+        _horizInputL = Input.GetAxis("HorizontalL");
         _vertInputR = Input.GetAxis("VerticalR");
-        _movement = new Vector3(_horizInput, _vertInputL, 0);
+        _vertInputL = Input.GetAxis("VerticalL");
+        _movement = new Vector3(_horizInputL, _vertInputR, 0);
+        Debug.Log(Mathf.Abs(_vertInputL));
     }
     void ForwardVelocity()
     {
-        _velocity += transform.forward * _acceleration * Time.deltaTime;
-    
+        if (_vertInputL >= 1)
+            _velocity += transform.forward * _acceleration * Mathf.Abs(_vertInputL) * Time.deltaTime;
+        else
+            _velocity = Vector3.zero;
+
     }
     void MaxFlyingSpeed()
     {
@@ -80,44 +84,38 @@ public class GullBehaviour : MonoBehaviour {
     }
     void Turning()
     {
-        _rotationY = Mathf.Clamp(_rotationY, -0.5f,0.5f);
+        _rotationY = Mathf.Clamp(_rotationY, -0.5f, 0.5f);
 
-        if (Mathf.Abs(_horizInput) > 0.1f)
+        if (Mathf.Abs(_horizInputL) > 0.1f)
         {
             _turning = true;
-            _rotationY += _turnSpeed*_horizInput * Time.deltaTime;
-            _velocity.x += _horizInput * Time.deltaTime;
+            _rotationY += _turnSpeed * _horizInputL * Time.deltaTime;
             transform.Rotate(Vector3.up, _rotationY);
         }
 
-        if (Mathf.Abs(_horizInput) < 0.1f)
+        if (Mathf.Abs(_horizInputL) < 0.1f)
         {
             _rotationY = 0;
             _turning = false;
         }
-            
-        
+
+
     }
     void AscendDescend()
     {
         _rotationZ = Mathf.Clamp(_rotationZ, -0.5f, 0.5f);
-        
-        if (Mathf.Abs(_vertInputL) > 0.1f && _turning == false)
+
+        if (Mathf.Abs(_vertInputR) > 0.1f && _turning == false)
         {
-            Debug.Log("Movin on down/up");
-            _velocity.y += _heightSpeed*_movement.y * Time.deltaTime;
+
+            _velocity.y += _heightSpeed * _movement.y * Time.deltaTime;
         }
-        if(_turning == false && Mathf.Abs(_vertInputL) < 0.1f)
+        if (_turning == false && Mathf.Abs(_vertInputR) < 0.1f)
         {
             _prevRotation = _currentYRotation;
             _velocity.y = 0;
-            transform.rotation = Quaternion.Lerp(transform.rotation,_prevRotation, 1);
+            transform.rotation = Quaternion.Lerp(transform.rotation, _prevRotation, 1);
         }
-    }
-    
-    void Dive()
-    {
-
     }
 }
 
