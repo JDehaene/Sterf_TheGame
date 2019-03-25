@@ -14,8 +14,6 @@ public class FishBehaviour : MonoBehaviour
     [SerializeField]
     private float _maxSpeed;
     [SerializeField]
-    private Transform _absoluteForward;
-    [SerializeField]
     private GameObject _player;
 
     private CharacterController _c;
@@ -35,8 +33,8 @@ public class FishBehaviour : MonoBehaviour
     private Quaternion _prevRotation;
 
     private bool _turning;
-
-
+    [SerializeField]
+    private float _dragOnGround;
 
     void Start()
     {
@@ -63,14 +61,13 @@ public class FishBehaviour : MonoBehaviour
         _vertInputR = Input.GetAxis("VerticalR");
         _vertInputL = Input.GetAxis("VerticalL");
         _movement = new Vector3(_horizInputL, _vertInputR, 0);
-        Debug.Log(Mathf.Abs(_vertInputL));
     }
     void ForwardVelocity()
     {
         if (_vertInputL >= 1)
             _velocity += transform.forward * _acceleration * Mathf.Abs(_vertInputL) * Time.deltaTime;
         else
-            _velocity = Vector3.zero;
+            _velocity = _velocity * (1 - 0.1f * _dragOnGround);
 
     }
     void MaxFlyingSpeed()

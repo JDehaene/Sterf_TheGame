@@ -4,7 +4,15 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - GullCam
+  - Plankton
+  - Target
+  - Playerpos
+  - Fish
+  - Gull
+  - Orca
+  - Seal
+  - Shark
+  - Shrimp
   layers:
   - Default
   - TransparentFX

@@ -11,24 +11,29 @@ public class ShrimpBehaviour : MonoBehaviour {
     [SerializeField]
     private float _maxSpeed;
     [SerializeField]
-    private Transform _absoluteForward;
-    [SerializeField]
     private GameObject _player;
     [SerializeField]
     private float _gravity;
+    [SerializeField]
+    private float _dragOnGround;
 
     private CharacterController _c;
+    public GrowthTrackingBehaviour Growth;
 
 
     private Vector3 _movement;
     private Vector3 _velocity = Vector3.zero;
 
-    private float _horizInput;
-    private float _vertInput;
+    private bool _eatInput;
+    private float _horizInputL;
+    private float _vertInputR;
+    private float _vertInputL;
     private float _rotationY;
 
+
+
     private bool _turning;
- 
+
 
     void Start ()
     {
@@ -43,35 +48,38 @@ public class ShrimpBehaviour : MonoBehaviour {
         ForwardVelocity();
         MaxSpeed();
         ApplyGravity();
+        Grow();
         
         _c.Move(_velocity);
     }
     void HandleInput()
     {
-
-        _horizInput = Input.GetAxis("Horizontal");
-        _vertInput = Input.GetAxis("Vertical");
-        _movement = new Vector3(_horizInput, _vertInput, 0);
+        _eatInput = Input.GetButtonDown("Eat");
+        _horizInputL = Input.GetAxis("HorizontalL");
+        _vertInputR = Input.GetAxis("VerticalR");
+        _vertInputL = Input.GetAxis("VerticalL");
+        _movement = new Vector3(_horizInputL, _vertInputR, 0);
     }
     void ForwardVelocity()
     {
-        if(_c.isGrounded)
-        {
-            _velocity += transform.forward * _acceleration * Time.deltaTime;
-        }
+        if(_vertInputL >= 1)        
+            _velocity += transform.forward * _acceleration * Mathf.Abs(_vertInputL) * Time.deltaTime;        
+        else
+            _velocity = _velocity * (1 - 0.1f * _dragOnGround);
+        
     }
     void Turning()
     {
         _rotationY = Mathf.Clamp(_rotationY, -0.5f, 0.5f);
 
-        if (Mathf.Abs(_horizInput) > 0.1f)
+        if (Mathf.Abs(_horizInputL) > 0.1f)
         {
             _turning = true;
-            _rotationY += _turnSpeed * _horizInput * Time.deltaTime;
+            _rotationY += _turnSpeed * _horizInputL * Time.deltaTime;
             transform.Rotate(Vector3.up, _rotationY);
         }
 
-        if (Mathf.Abs(_horizInput) < 0.1f)
+        if (Mathf.Abs(_horizInputL) < 0.1f)
         {
             _rotationY = 0;
             _turning = false;
@@ -90,5 +98,31 @@ public class ShrimpBehaviour : MonoBehaviour {
     {
         if(!_c.isGrounded)
         _velocity -= Vector3.down *_gravity * Time.deltaTime;
+    }
+    private void OnTriggerStay(Collider other)
+    {
+        if (Input.GetButtonDown("Eat") && other.gameObject.tag == "Plankton")
+        {
+            Debug.Log("Food Detected");
+            Eat(other.gameObject);
+        }
+            
+    }
+    void Eat(GameObject food)
+    {
+        Destroy(food);
+        Growth._growthStage++;
+        Debug.Log(Growth._growthStage); 
+    }
+    void Grow()
+    {
+       if(Growth._growthStage < 4)
+        {
+            transform.localScale = new Vector3(0.5f, 0.5f, 0.5f);
+        }
+       else
+        {
+            transform.localScale = new Vector3(1f, 1f, 1f);
+        }
     }
 }
