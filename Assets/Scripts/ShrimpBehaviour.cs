@@ -103,7 +103,6 @@ public class ShrimpBehaviour : MonoBehaviour {
     {
         if (Input.GetButtonDown("Eat") && other.gameObject.tag == "Plankton")
         {
-            Debug.Log("Food Detected");
             Eat(other.gameObject);
         }
             

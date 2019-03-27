@@ -1,0 +1,62 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &100100000
+Prefab:
+  m_ObjectHideFlags: 1
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications: []
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 0}
+  m_RootGameObject: {fileID: 1289284621093646}
+  m_IsPrefabAsset: 1
+--- !u!1 &1289284621093646
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4107367775394942}
+  - component: {fileID: 114225111770727732}
+  m_Layer: 0
+  m_Name: SpawnManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4107367775394942
+Transform:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1289284621093646}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 12.578579, y: 5.4306393, z: 61.993103}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &114225111770727732
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1289284621093646}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0535c13ecc931df4f92b78ca00acebf0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _Animals:
+  - {fileID: 0}
+  - {fileID: 1551615646806450, guid: 43993b5d9e765bd4c93474cb9322b8ba, type: 2}
+  - {fileID: 1955767221871218, guid: 9362872e3e6ce3f4a9949d81d00c17e4, type: 2}
+  - {fileID: 1842499729540702, guid: 18e0095c8acd0e344b97ddf710f1f4d9, type: 2}
+  - {fileID: 1783568468794408, guid: c6954d45b5e743e4f98bbdbb44cb30b8, type: 2}
+  - {fileID: 1263911893647030, guid: ee3d213685e7dce4ca45037f6e6aa472, type: 2}
+  _growthStage: 0
+  _playerDead: 0
