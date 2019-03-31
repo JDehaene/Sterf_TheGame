@@ -17,7 +17,7 @@ public class SharkBehaviour : MonoBehaviour
     private GameObject _player;
 
     private CharacterController _c;
-
+    public GrowthTrackingBehaviour Growth;
 
     private Vector3 _movement;
     private Vector3 _velocity = Vector3.zero;
@@ -43,6 +43,8 @@ public class SharkBehaviour : MonoBehaviour
 
     void Update()
     {
+        Growth = (GrowthTrackingBehaviour)FindObjectOfType(typeof(GrowthTrackingBehaviour));
+
         _currentYRotation = this.transform.rotation;
 
         HandleInput();
@@ -112,6 +114,31 @@ public class SharkBehaviour : MonoBehaviour
             _prevRotation = _currentYRotation;
             _velocity.y = 0;
             transform.rotation = Quaternion.Lerp(transform.rotation, _prevRotation, 1);
+        }
+    }
+    private void OnTriggerStay(Collider other)
+    {
+        if (Input.GetButtonDown("Eat") && other.gameObject.tag == "Seal")
+        {
+            Eat(other.gameObject);
+        }
+
+    }
+    void Eat(GameObject food)
+    {
+        Destroy(food);
+        Growth._growthStage++;
+        Debug.Log(Growth._growthStage);
+    }
+    void Grow()
+    {
+        if (Growth._growthStage < 4)
+        {
+            transform.localScale = new Vector3(0.5f, 0.5f, 0.5f);
+        }
+        else
+        {
+            transform.localScale = new Vector3(1f, 1f, 1f);
         }
     }
 }

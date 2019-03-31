@@ -2,26 +2,29 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class NPFishBehaviour : MonoBehaviour
+public class NPSharkBehaviour : MonoBehaviour
 {
 
     public GrowthTrackingBehaviour Growth;
     private float _timeUntilDeath = 2;
     [SerializeField]
     private GameObject _player;
-    private float _speed = 1f;
+    private float _speed = 2f;
     private float _maxDetectionDistance = 5;
 
     private void Update()
     {
         Growth = (GrowthTrackingBehaviour)FindObjectOfType(typeof(GrowthTrackingBehaviour));
-        _player = GameObject.Find("Garnaal(Clone)");
+        if(Growth._animalIndex == 2)
+        {
+        _player = GameObject.Find("Zeehond(Clone)");
         FindPlayer();
+        }
     }
 
     private void OnTriggerStay(Collider other)
     {
-        if (other.gameObject.tag == "Shrimp")
+        if (other.gameObject.tag == "Seal")
         {
             KillPlayer(other.gameObject);
         }
@@ -43,7 +46,7 @@ public class NPFishBehaviour : MonoBehaviour
     }
     void FindPlayer()
     {
-        if(Vector3.Distance(_player.transform.position,transform.position) < _maxDetectionDistance && _player.transform.tag == "Shrimp")
+        if (Vector3.Distance(_player.transform.position, transform.position) < _maxDetectionDistance && _player.transform.tag == "Seal")
         {
             Debug.Log("In range");
             transform.position = Vector3.MoveTowards(transform.position, _player.transform.position, _speed * Time.deltaTime);

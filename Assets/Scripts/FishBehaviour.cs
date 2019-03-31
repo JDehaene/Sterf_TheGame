@@ -39,10 +39,13 @@ public class FishBehaviour : MonoBehaviour
     void Start()
     {
         _c = GetComponent<CharacterController>();
+
     }
 
     void Update()
     {
+        Growth = (GrowthTrackingBehaviour)FindObjectOfType(typeof(GrowthTrackingBehaviour));
+
         _currentYRotation = this.transform.rotation;
 
         HandleInput();
@@ -128,7 +131,6 @@ public class FishBehaviour : MonoBehaviour
     {
         Destroy(food);
         Growth._growthStage++;
-        Debug.Log(Growth._growthStage);
     }
     void Grow()
     {
