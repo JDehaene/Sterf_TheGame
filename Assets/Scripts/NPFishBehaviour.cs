@@ -14,6 +14,7 @@ public class NPFishBehaviour : MonoBehaviour
 
     private void Update()
     {
+        Growth = (GrowthTrackingBehaviour)FindObjectOfType(typeof(GrowthTrackingBehaviour));
         _player = GameObject.Find("Garnaal(Clone)");
         FindPlayer();
     }
