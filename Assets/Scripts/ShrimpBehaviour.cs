@@ -43,6 +43,8 @@ public class ShrimpBehaviour : MonoBehaviour {
 
 	void Update ()
     {
+        Growth = (GrowthTrackingBehaviour)FindObjectOfType(typeof(GrowthTrackingBehaviour));
+
         HandleInput();
         Turning();
         ForwardVelocity();
@@ -109,9 +111,11 @@ public class ShrimpBehaviour : MonoBehaviour {
     }
     void Eat(GameObject food)
     {
-        Destroy(food);
+        
         Growth._growthStage++;
-        Debug.Log(Growth._growthStage); 
+        Debug.Log(Growth._growthStage);
+        Destroy(food);
+        
     }
     void Grow()
     {

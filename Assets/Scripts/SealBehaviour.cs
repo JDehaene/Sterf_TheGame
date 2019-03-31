@@ -44,6 +44,8 @@ public class SealBehaviour : MonoBehaviour
 
     void Update()
     {
+        Growth = (GrowthTrackingBehaviour)FindObjectOfType(typeof(GrowthTrackingBehaviour));
+
         _currentYRotation = this.transform.rotation;
 
         HandleInput();

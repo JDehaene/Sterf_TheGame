@@ -23,7 +23,7 @@ GameObject:
   - component: {fileID: 114260217423192638}
   m_Layer: 0
   m_Name: Zeehond
-  m_TagString: Untagged
+  m_TagString: Seal
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -188,6 +188,7 @@ MonoBehaviour:
   _turnSpeed: 10
   _maxSpeed: 0.06
   _player: {fileID: 1459498439516672}
+  Growth: {fileID: 114225111770727732, guid: 1267717944a89d24985a345aa11460d1, type: 2}
   _dragOnGround: 0.15
 --- !u!143 &143839506267422310
 CharacterController:

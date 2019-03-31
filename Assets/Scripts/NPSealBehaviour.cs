@@ -2,25 +2,25 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class NPFishBehaviour : MonoBehaviour
+public class NPSealBehaviour : MonoBehaviour
 {
 
     public GrowthTrackingBehaviour Growth;
     private float _timeUntilDeath = 2;
     [SerializeField]
     private GameObject _player;
-    private float _speed = 1f;
+    private float _speed = 2f;
     private float _maxDetectionDistance = 5;
 
     private void Update()
     {
-        _player = GameObject.Find("Garnaal(Clone)");
+        _player = GameObject.Find("Vis(Clone)");
         FindPlayer();
     }
 
     private void OnTriggerStay(Collider other)
     {
-        if (other.gameObject.tag == "Shrimp")
+        if (other.gameObject.tag == "Fish")
         {
             KillPlayer(other.gameObject);
         }
@@ -42,7 +42,7 @@ public class NPFishBehaviour : MonoBehaviour
     }
     void FindPlayer()
     {
-        if(Vector3.Distance(_player.transform.position,transform.position) < _maxDetectionDistance && _player.transform.tag == "Shrimp")
+        if (Vector3.Distance(_player.transform.position, transform.position) < _maxDetectionDistance && _player.transform.tag == "Fish")
         {
             Debug.Log("In range");
             transform.position = Vector3.MoveTowards(transform.position, _player.transform.position, _speed * Time.deltaTime);

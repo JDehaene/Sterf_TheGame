@@ -52,11 +52,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _Animals:
-  - {fileID: 0}
-  - {fileID: 1551615646806450, guid: 43993b5d9e765bd4c93474cb9322b8ba, type: 2}
-  - {fileID: 1955767221871218, guid: 9362872e3e6ce3f4a9949d81d00c17e4, type: 2}
-  - {fileID: 1842499729540702, guid: 18e0095c8acd0e344b97ddf710f1f4d9, type: 2}
-  - {fileID: 1783568468794408, guid: c6954d45b5e743e4f98bbdbb44cb30b8, type: 2}
+  - {fileID: 1261664775715998, guid: 731a4fd0b96aaf34ea037b2061ff2747, type: 2}
+  - {fileID: 1313664503342244, guid: d541660be9741c84eaef0fbad5214f77, type: 2}
+  - {fileID: 1459498439516672, guid: 138da02d726997049a87368c0d0a996a, type: 2}
+  - {fileID: 1018577522312394, guid: c34f9bb14e7132d489f47246329ab40a, type: 2}
   - {fileID: 1263911893647030, guid: ee3d213685e7dce4ca45037f6e6aa472, type: 2}
+  _animalIndex: 1
   _growthStage: 0
-  _playerDead: 0
+  _playerDead: 1
+  _spawnLocation: {fileID: 0}

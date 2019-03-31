@@ -5,12 +5,14 @@ using UnityEngine;
 public class GrowthTrackingBehaviour : MonoBehaviour {
 
     public GameObject[] _Animals;
-    private int _animalIndex = 1;
-    public int _growthStage = 0;
+    public int _animalIndex = 1;
+    public int _growthStage;
 
     public bool _playerDead;
+    [SerializeField]
+    private Transform _spawnLocation;
 
-	void Update ()
+    void Update ()
     {
         SpawnAnimal();
     }
@@ -19,7 +21,6 @@ public class GrowthTrackingBehaviour : MonoBehaviour {
     {
         if(_growthStage >= 4 && _playerDead)
         {
-            Debug.Log("Spawned");
             Instantiate(_Animals[_animalIndex]);
             _animalIndex++;
             Debug.Log(_animalIndex);
