@@ -8,7 +8,7 @@ public class WaypointBehaviour : MonoBehaviour {
     private int _waypointIndex = 0;
     [SerializeField]
     private float _swimmingSpeed;
-    private bool _waypointReached;
+    private bool _waypointReached = true;
 
     void Start ()
     {
@@ -18,12 +18,16 @@ public class WaypointBehaviour : MonoBehaviour {
 	
 	void Update ()
     {
-       
+        MoveToWaypoint();
+        NextWaypoint();
 	}
     void MoveToWaypoint()
     {
         if(_waypointReached)
+        {
+            Debug.Log("it goin");
             transform.position = Vector3.MoveTowards(transform.position, Waypoints[_waypointIndex].position, _swimmingSpeed * Time.deltaTime);
+        }
     }
     void NextWaypoint()
     {

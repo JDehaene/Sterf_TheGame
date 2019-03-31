@@ -15,8 +15,11 @@ public class NPSharkBehaviour : MonoBehaviour
     private void Update()
     {
         Growth = (GrowthTrackingBehaviour)FindObjectOfType(typeof(GrowthTrackingBehaviour));
+        if(Growth._animalIndex == 2)
+        {
         _player = GameObject.Find("Zeehond(Clone)");
         FindPlayer();
+        }
     }
 
     private void OnTriggerStay(Collider other)
