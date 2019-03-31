@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 65140127296483766}
   - component: {fileID: 65625735139893380}
   - component: {fileID: 114390827147789920}
+  - component: {fileID: 114450258719431440}
   m_Layer: 0
   m_Name: HaaiNP
   m_TagString: Untagged
@@ -152,3 +153,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Growth: {fileID: 0}
   _player: {fileID: 0}
+--- !u!114 &114450258719431440
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1774211070026420}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0a8818d32be14b44697b4199e0ec1e31, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Waypoints: []
+  _swimmingSpeed: 0

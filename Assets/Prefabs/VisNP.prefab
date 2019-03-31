@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 65676437921930932}
   - component: {fileID: 65452245689958166}
   - component: {fileID: 114364051869835156}
+  - component: {fileID: 114878622861356700}
   m_Layer: 0
   m_Name: VisNP
   m_TagString: Untagged
@@ -152,3 +153,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Growth: {fileID: 114225111770727732, guid: 1267717944a89d24985a345aa11460d1, type: 2}
   _player: {fileID: 0}
+--- !u!114 &114878622861356700
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1214311916849076}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0a8818d32be14b44697b4199e0ec1e31, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Waypoints: []
+  _swimmingSpeed: 0

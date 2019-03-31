@@ -37,6 +37,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4433402111843002}
   - component: {fileID: 65690003232603498}
+  - component: {fileID: 114226201246321444}
   m_Layer: 0
   m_Name: MeeuwNP
   m_TagString: Untagged
@@ -125,3 +126,16 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &114226201246321444
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1708726695856768}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0a8818d32be14b44697b4199e0ec1e31, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Waypoints: []
+  _swimmingSpeed: 0
