@@ -8,10 +8,6 @@ public class NPFishBehaviour : MonoBehaviour
     public GrowthTrackingBehaviour Growth;
     private float _timeUntilDeath = 2;
 
-    void Start()
-    {
-
-    }
     private void OnTriggerStay(Collider other)
     {
         if (other.gameObject.tag == "Shrimp")
