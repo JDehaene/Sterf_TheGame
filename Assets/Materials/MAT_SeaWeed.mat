@@ -74,7 +74,7 @@ Material:
     - _Scale: 0.053
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
-    - _Speed: 0.22
+    - _Speed: 2.5
     - _SrcBlend: 1
     - _UVSec: 0
     - _Yaw: -8.37
