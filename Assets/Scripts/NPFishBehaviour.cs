@@ -6,17 +6,23 @@ public class NPFishBehaviour : MonoBehaviour
 {
 
     public GrowthTrackingBehaviour Growth;
-    private float _timeUntilDeath = 2;
+    private float _timeUntilDeath = 0.1f;
     [SerializeField]
     private GameObject _player;
     private float _speed = 1f;
-    private float _maxDetectionDistance = 5;
+    [SerializeField]
+    private float _maxDetectionDistance;
+
+    public WaypointBehaviour WP;
 
     private void Update()
     {
         Growth = (GrowthTrackingBehaviour)FindObjectOfType(typeof(GrowthTrackingBehaviour));
-        _player = GameObject.Find("Garnaal(Clone)");
-        FindPlayer();
+        if (Growth._animalIndex == 0)
+        {
+            _player = GameObject.Find("Garnaal(Clone)");
+            FindPlayer();
+        }
     }
 
     private void OnTriggerStay(Collider other)
@@ -28,7 +34,7 @@ public class NPFishBehaviour : MonoBehaviour
     }
     private void OnTriggerExit(Collider other)
     {
-        _timeUntilDeath = 2;
+        _timeUntilDeath = 0.1f;
     }
     void KillPlayer(GameObject food)
     {
@@ -36,16 +42,14 @@ public class NPFishBehaviour : MonoBehaviour
 
         if (_timeUntilDeath <= 0)
         {
-            Debug.Log("Ded");
             Growth._playerDead = true;
             Destroy(food);
         }
     }
     void FindPlayer()
     {
-        if(Vector3.Distance(_player.transform.position,transform.position) < _maxDetectionDistance && _player.transform.tag == "Shrimp")
+        if (Growth._growthStage >= 4 && Vector3.Distance(_player.transform.position,transform.position) < _maxDetectionDistance && _player.transform.tag == "Shrimp")
         {
-            Debug.Log("In range");
             transform.position = Vector3.MoveTowards(transform.position, _player.transform.position, _speed * Time.deltaTime);
             transform.LookAt(_player.transform);
         }

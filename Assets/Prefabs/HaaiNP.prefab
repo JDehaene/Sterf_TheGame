@@ -20,13 +20,12 @@ GameObject:
   m_Component:
   - component: {fileID: 4408685153442306}
   - component: {fileID: 64418253395877848}
-  - component: {fileID: 65140127296483766}
   - component: {fileID: 65625735139893380}
   - component: {fileID: 114390827147789920}
   - component: {fileID: 114450258719431440}
   m_Layer: 0
   m_Name: HaaiNP
-  m_TagString: Untagged
+  m_TagString: Shark
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -55,8 +54,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1774211070026420}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 352, y: 538, z: 459}
+  m_LocalScale: {x: 60, y: 60, z: 60}
   m_Children:
   - {fileID: 4737421666180254}
   m_Father: {fileID: 0}
@@ -131,18 +130,6 @@ MeshCollider:
   m_CookingOptions: 14
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 0}
---- !u!65 &65140127296483766
-BoxCollider:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1774211070026420}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 2.55, y: 2.23, z: 2}
-  m_Center: {x: 0, y: 0.82, z: 0}
 --- !u!65 &65625735139893380
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -183,4 +170,13 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  _swimmingSpeed: 0.57
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  _index: 0
+  _swimmingSpeed: 100
+  _maxDistance: 150

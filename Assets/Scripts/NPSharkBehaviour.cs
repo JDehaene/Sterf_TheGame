@@ -6,7 +6,7 @@ public class NPSharkBehaviour : MonoBehaviour
 {
 
     public GrowthTrackingBehaviour Growth;
-    private float _timeUntilDeath = 2;
+    private float _timeUntilDeath = 0.1f;
     [SerializeField]
     private GameObject _player;
     private float _speed = 2f;
@@ -31,7 +31,7 @@ public class NPSharkBehaviour : MonoBehaviour
     }
     private void OnTriggerExit(Collider other)
     {
-        _timeUntilDeath = 2;
+        _timeUntilDeath = 0.1f;
     }
     void KillPlayer(GameObject food)
     {
@@ -46,7 +46,7 @@ public class NPSharkBehaviour : MonoBehaviour
     }
     void FindPlayer()
     {
-        if (Vector3.Distance(_player.transform.position, transform.position) < _maxDetectionDistance && _player.transform.tag == "Seal")
+        if (Growth._growthStage >= 4 && Vector3.Distance(_player.transform.position, transform.position) < _maxDetectionDistance && _player.transform.tag == "Seal")
         {
             Debug.Log("In range");
             transform.position = Vector3.MoveTowards(transform.position, _player.transform.position, _speed * Time.deltaTime);

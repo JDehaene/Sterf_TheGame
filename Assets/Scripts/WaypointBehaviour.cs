@@ -2,39 +2,41 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class WaypointBehaviour : MonoBehaviour {
+public class WaypointBehaviour : MonoBehaviour
+{
 
     public Transform[] Waypoints;
-    private int _waypointIndex = 0;
+    [SerializeField]
+    private int _index;
     [SerializeField]
     private float _swimmingSpeed;
     private bool _waypointReached = true;
+    [SerializeField]
+    private float _maxDistance;
 
-    void Start ()
+
+    void Start()
     {
-		
-	}
-	
-	
-	void Update ()
+
+    }
+
+
+    void Update()
     {
         MoveToWaypoint();
-        NextWaypoint();
-	}
+    }
     void MoveToWaypoint()
     {
-        if(_waypointReached)
+        if (Vector3.Distance(new Vector3(transform.position.x, transform.position.y, transform.position.z), new Vector3(Waypoints[_index + 1].position.x, transform.position.y, Waypoints[_index + 1].position.z)) <= _maxDistance)
         {
-            Debug.Log("it goin");
-            transform.position = Vector3.MoveTowards(transform.position, Waypoints[_waypointIndex].position, _swimmingSpeed * Time.deltaTime);
+            ++_index;
+            if (_index >= Waypoints.Length - 1)
+            {
+                _index = -1;
+            }
+            //_transform.rotation = Quaternion.LookRotation(WayPoints[_index + 1].position - _transform.position, Vector3.up);
+            transform.LookAt(Waypoints[_index + 1].transform);
         }
-    }
-    void NextWaypoint()
-    {
-        if (_waypointReached = false && Vector3.Distance(new Vector3(transform.position.x, transform.position.z), new Vector3(Waypoints[_waypointIndex].position.x, 0, Waypoints[_waypointIndex].position.z)) > 2)
-        {
-            _waypointIndex++;
-            _waypointReached = true;
-        }
+        transform.Translate(Vector3.forward * _swimmingSpeed * Time.deltaTime);
     }
 }

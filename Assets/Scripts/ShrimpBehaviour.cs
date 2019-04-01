@@ -50,7 +50,7 @@ public class ShrimpBehaviour : MonoBehaviour {
         ForwardVelocity();
         MaxSpeed();
         ApplyGravity();
-        Grow();
+        //Grow();
         
         _c.Move(_velocity);
     }

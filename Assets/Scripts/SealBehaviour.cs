@@ -119,7 +119,7 @@ public class SealBehaviour : MonoBehaviour
     }
     private void OnTriggerStay(Collider other)
     {
-        if (Input.GetButtonDown("Eat") && other.gameObject.tag == "Gull")
+        if (Input.GetButtonDown("Eat") && other.gameObject.tag == "Fish")
         {
             Eat(other.gameObject);
         }

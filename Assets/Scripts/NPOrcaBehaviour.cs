@@ -6,7 +6,7 @@ public class NPOrcaBehaviour : MonoBehaviour
 {
 
     public GrowthTrackingBehaviour Growth;
-    private float _timeUntilDeath = 2;
+    private float _timeUntilDeath = 0.1f;
     [SerializeField]
     private GameObject _player;
     private float _speed = 2f;
@@ -15,8 +15,11 @@ public class NPOrcaBehaviour : MonoBehaviour
     private void Update()
     {
         Growth = (GrowthTrackingBehaviour)FindObjectOfType(typeof(GrowthTrackingBehaviour));
-        _player = GameObject.Find("Haai(Clone)");
-        FindPlayer();
+        if (Growth._animalIndex == 3)
+        {
+            _player = GameObject.Find("Haai(Clone)");
+            FindPlayer();
+        }
     }
 
     private void OnTriggerStay(Collider other)
@@ -28,7 +31,7 @@ public class NPOrcaBehaviour : MonoBehaviour
     }
     private void OnTriggerExit(Collider other)
     {
-        _timeUntilDeath = 2;
+        _timeUntilDeath = 0.1f;
     }
     void KillPlayer(GameObject food)
     {
@@ -43,7 +46,7 @@ public class NPOrcaBehaviour : MonoBehaviour
     }
     void FindPlayer()
     {
-        if (Vector3.Distance(_player.transform.position, transform.position) < _maxDetectionDistance && _player.transform.tag == "Shark")
+        if (Growth._growthStage >= 4 && Vector3.Distance(_player.transform.position, transform.position) < _maxDetectionDistance && _player.transform.tag == "Shark")
         {
             Debug.Log("In range");
             transform.position = Vector3.MoveTowards(transform.position, _player.transform.position, _speed * Time.deltaTime);

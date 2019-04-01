@@ -6,17 +6,21 @@ public class NPSealBehaviour : MonoBehaviour
 {
 
     public GrowthTrackingBehaviour Growth;
-    private float _timeUntilDeath = 2;
+    private float _timeUntilDeath = 0.1f;
     [SerializeField]
     private GameObject _player;
     private float _speed = 2f;
-    private float _maxDetectionDistance = 5;
+    [SerializeField]
+    private float _maxDetectionDistance;
 
     private void Update()
     {
         Growth = (GrowthTrackingBehaviour)FindObjectOfType(typeof(GrowthTrackingBehaviour));
-        _player = GameObject.Find("Vis(Clone)");
-        FindPlayer();
+        if (Growth._animalIndex == 1)
+        {
+            _player = GameObject.Find("Vis(Clone)");
+            FindPlayer();
+        }
     }
 
     private void OnTriggerStay(Collider other)
@@ -28,7 +32,7 @@ public class NPSealBehaviour : MonoBehaviour
     }
     private void OnTriggerExit(Collider other)
     {
-        _timeUntilDeath = 2;
+        _timeUntilDeath = 0.1f;
     }
     void KillPlayer(GameObject food)
     {
@@ -43,7 +47,7 @@ public class NPSealBehaviour : MonoBehaviour
     }
     void FindPlayer()
     {
-        if (Vector3.Distance(_player.transform.position, transform.position) < _maxDetectionDistance && _player.transform.tag == "Fish")
+        if (Growth._growthStage >= 4 && Vector3.Distance(_player.transform.position, transform.position) < _maxDetectionDistance && _player.transform.tag == "Fish")
         {
             Debug.Log("In range");
             transform.position = Vector3.MoveTowards(transform.position, _player.transform.position, _speed * Time.deltaTime);

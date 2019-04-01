@@ -19,6 +19,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4590923774573006}
+  - component: {fileID: 64085932270768210}
   - component: {fileID: 143839506267422310}
   - component: {fileID: 114260217423192638}
   m_Layer: 0
@@ -107,16 +108,16 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1459498439516672}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: -0, y: -0.9996283, z: -0, w: 0.02726264}
+  m_LocalPosition: {x: -1126.0342, y: -169.7, z: -1621.2286}
+  m_LocalScale: {x: 50, y: 50, z: 50}
   m_Children:
   - {fileID: 4783428754239800}
   - {fileID: 4279357139502356}
   - {fileID: 4540732201456018}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -176.876, z: 0}
 --- !u!4 &4783428754239800
 Transform:
   m_ObjectHideFlags: 1
@@ -145,7 +146,7 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 2100000, guid: 2820c152f0f8f274192c937d546d8206, type: 2}
+  - {fileID: 2100000, guid: a36ebca32cce6394ba662257e5241862, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -172,6 +173,20 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1634193404730432}
   m_Mesh: {fileID: 4300000, guid: 3a17ac2e781ef7443b32748ef257755d, type: 3}
+--- !u!64 &64085932270768210
+MeshCollider:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1459498439516672}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 14
+  m_SkinWidth: 0.01
+  m_Mesh: {fileID: 0}
 --- !u!114 &114260217423192638
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -183,10 +198,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: df923381d759248419cfb0754ede2d9e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _acceleration: 1
-  _heightSpeed: 0.03
-  _turnSpeed: 10
-  _maxSpeed: 0.06
+  _acceleration: 15
+  _heightSpeed: 6
+  _turnSpeed: 25
+  _maxSpeed: 6
   _player: {fileID: 1459498439516672}
   Growth: {fileID: 114225111770727732, guid: 1267717944a89d24985a345aa11460d1, type: 2}
   _dragOnGround: 0.15
@@ -201,9 +216,9 @@ CharacterController:
   m_Enabled: 1
   serializedVersion: 2
   m_Height: 1
-  m_Radius: 0.5
+  m_Radius: 0.8
   m_SlopeLimit: 45
   m_StepOffset: 0.3
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0, y: 0, z: -0.79}

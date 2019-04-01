@@ -53,7 +53,7 @@ public class FishBehaviour : MonoBehaviour
         MaxFlyingSpeed();
         Turning();
         AscendDescend();
-        Grow();
+        //Grow();
 
         _c.Move(_velocity);
     }
