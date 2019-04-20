@@ -16,7 +16,7 @@ MonoBehaviour:
     m_Settings:
       mode: 0
       depth:
-        scale: 1
+        scale: 0.07
       motionVectors:
         sourceOpacity: 1
         motionImageOpacity: 0
@@ -27,7 +27,7 @@ MonoBehaviour:
   fog:
     m_Enabled: 1
     m_Settings:
-      excludeSkybox: 1
+      excludeSkybox: 0
   antialiasing:
     m_Enabled: 1
     m_Settings:
@@ -100,10 +100,10 @@ MonoBehaviour:
     m_Enabled: 1
     m_Settings:
       bloom:
-        intensity: 2
+        intensity: 1.65
         threshold: 1.68
         softKnee: 0.321
-        radius: 1.97
+        radius: 1.5
         antiFlicker: 0
       lensDirt:
         texture: {fileID: 0}
@@ -120,17 +120,17 @@ MonoBehaviour:
         neutralWhiteLevel: 5.3
         neutralWhiteClip: 10
       basic:
-        postExposure: 0.24
+        postExposure: -0.06
         temperature: 16.88
-        tint: 0
-        hueShift: -5
+        tint: 3
+        hueShift: -3
         saturation: 1
         contrast: 1.1
       channelMixer:
         red: {x: 1, y: 0, z: 0}
         green: {x: 0, y: 1, z: 0}
         blue: {x: 0, y: 0, z: 0.6}
-        currentEditingChannel: 1
+        currentEditingChannel: 2
       colorWheels:
         mode: 0
         log:
@@ -158,8 +158,8 @@ MonoBehaviour:
             - serializedVersion: 3
               time: 1
               value: 1
-              inSlope: 1
-              outSlope: 1
+              inSlope: 0.4001681
+              outSlope: 0.4001681
               tangentMode: 0
               weightedMode: 0
               inWeight: 0
@@ -186,8 +186,8 @@ MonoBehaviour:
             - serializedVersion: 3
               time: 1
               value: 1
-              inSlope: 1
-              outSlope: 1
+              inSlope: 0.7862946
+              outSlope: 0.7862946
               tangentMode: 0
               weightedMode: 0
               inWeight: 0
@@ -242,8 +242,8 @@ MonoBehaviour:
             - serializedVersion: 3
               time: 1
               value: 1
-              inSlope: 1
-              outSlope: 1
+              inSlope: -0
+              outSlope: -0
               tangentMode: 0
               weightedMode: 0
               inWeight: 0
@@ -296,9 +296,9 @@ MonoBehaviour:
           m_Range: 1
         e_CurrentEditingCurve: 0
         e_CurveY: 1
-        e_CurveR: 0
-        e_CurveG: 0
-        e_CurveB: 0
+        e_CurveR: 1
+        e_CurveG: 1
+        e_CurveB: 1
   userLut:
     m_Enabled: 0
     m_Settings:
@@ -308,7 +308,7 @@ MonoBehaviour:
     m_Enabled: 0
     m_Settings:
       spectralTexture: {fileID: 0}
-      intensity: 0.1
+      intensity: 1
   grain:
     m_Enabled: 0
     m_Settings:
