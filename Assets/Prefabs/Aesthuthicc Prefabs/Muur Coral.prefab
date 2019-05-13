@@ -35,13 +35,13 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1734195277174340}
-  m_LocalRotation: {x: -0.56888527, y: 0.41996378, z: 0.41996378, w: 0.56888527}
-  m_LocalPosition: {x: 688, y: -96.97252, z: 511.7}
-  m_LocalScale: {x: 75.85117, y: 66.42617, z: 96.60355}
+  m_LocalRotation: {x: -0.6921439, y: -0.4758893, z: -0.30853853, w: 0.44639683}
+  m_LocalPosition: {x: -957.6718, y: -120.88574, z: 3025.1182}
+  m_LocalScale: {x: 136.93417, y: 119.919205, z: 174.39844}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: -90.00001, y: 0, z: 72.871}
+  m_LocalEulerAnglesHint: {x: -90.00001, y: -53.856995, z: 275.82}
 --- !u!23 &23378176334498244
 MeshRenderer:
   m_ObjectHideFlags: 1
@@ -94,7 +94,7 @@ MeshCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Convex: 1
+  m_Convex: 0
   m_CookingOptions: 14
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 4300000, guid: 2ade4747c9e707c42a727f316aaad193, type: 3}
