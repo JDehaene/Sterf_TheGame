@@ -23,37 +23,7 @@ GameObject:
   - component: {fileID: 114529063707877228}
   m_Layer: 0
   m_Name: Haai
-  m_TagString: Shark
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!1 &1141151302084950
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 4225299260008584}
-  m_Layer: 0
-  m_Name: TargetPos
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!1 &1657230132191992
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 4815589810276548}
-  m_Layer: 0
-  m_Name: PlayerPos
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -70,24 +40,11 @@ GameObject:
   - component: {fileID: 23774996019282688}
   m_Layer: 0
   m_Name: Shark
-  m_TagString: Untagged
+  m_TagString: Shark
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4225299260008584
-Transform:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1141151302084950}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 3.7, z: -12.11}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 4471527227144786}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4307915381005216
 Transform:
   m_ObjectHideFlags: 1
@@ -108,27 +65,12 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1018577522312394}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.2731044, y: 0.34122977, z: -0.48516527}
+  m_LocalPosition: {x: 119.12378, y: 94.08325, z: 3473.2046}
   m_LocalScale: {x: 60, y: 60, z: 60}
   m_Children:
   - {fileID: 4307915381005216}
-  - {fileID: 4815589810276548}
-  - {fileID: 4225299260008584}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!4 &4815589810276548
-Transform:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1657230132191992}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -1.3232124, z: 0.07}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 4471527227144786}
-  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!23 &23774996019282688
 MeshRenderer:
@@ -183,13 +125,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8674003df0821dc498a1c0f8758061e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Growth: {fileID: 114225111770727732, guid: 1267717944a89d24985a345aa11460d1, type: 2}
+  Cam: {fileID: 0}
+  _player: {fileID: 1801067396403850}
   _acceleration: 15
   _heightSpeed: 3
-  _turnSpeed: 10
-  _maxSpeed: 7
-  _player: {fileID: 1289284621093646, guid: 1267717944a89d24985a345aa11460d1, type: 2}
-  Growth: {fileID: 114225111770727732, guid: 1267717944a89d24985a345aa11460d1, type: 2}
-  _dragOnGround: 0.15
+  _maxSpeed: 3.5
+  _foodName: Seal
+  _horizRotationSpeed: 50
+  _vertRotationSpeed: 50
+  _dragOnGround: 0.1
+  _turnSpeedLimiter: 0.001
+  _resetRotation: 20
+  _resetRotationSpeed: 5
+  _collisionDistance: 10
+  _gravity: 0
+  _affectedByGravity: 0
+  _camPosOffset: 1
 --- !u!143 &143683958197714112
 CharacterController:
   m_ObjectHideFlags: 1

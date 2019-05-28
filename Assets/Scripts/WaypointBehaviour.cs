@@ -13,30 +13,25 @@ public class WaypointBehaviour : MonoBehaviour
     private bool _waypointReached = true;
     [SerializeField]
     private float _maxDistance;
-
-
-    void Start()
-    {
-
-    }
-
+    private Quaternion _wantedRotation;
 
     void Update()
     {
         MoveToWaypoint();
+        
     }
     void MoveToWaypoint()
     {
-        if (Vector3.Distance(new Vector3(transform.position.x, transform.position.y, transform.position.z), new Vector3(Waypoints[_index + 1].position.x, transform.position.y, Waypoints[_index + 1].position.z)) <= _maxDistance)
+        if (Vector3.Distance(transform.position, new Vector3(Waypoints[_index + 1].position.x, Waypoints[_index + 1].position.y, Waypoints[_index + 1].position.z)) <= _maxDistance)
         {
             ++_index;
             if (_index >= Waypoints.Length - 1)
             {
                 _index = -1;
             }
-            //_transform.rotation = Quaternion.LookRotation(WayPoints[_index + 1].position - _transform.position, Vector3.up);
-            transform.LookAt(Waypoints[_index + 1].transform);
         }
-        transform.Translate(Vector3.forward * _swimmingSpeed * Time.deltaTime);
+        _wantedRotation = Quaternion.LookRotation(Waypoints[_index + 1].position - transform.position, Vector3.up);
+        transform.rotation = Quaternion.Slerp(transform.rotation, _wantedRotation,Time.deltaTime);
+        transform.position = Vector3.MoveTowards(transform.position, Waypoints[_index + 1].position, _swimmingSpeed * Time.deltaTime);
     }
 }

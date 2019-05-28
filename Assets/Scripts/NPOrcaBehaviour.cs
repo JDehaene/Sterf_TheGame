@@ -24,7 +24,7 @@ public class NPOrcaBehaviour : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
-        if (other.gameObject.tag == "Shark")
+        if (other.gameObject.layer == 12 && Growth._growthStage >= 4)
         {
             KillPlayer(other.gameObject);
         }
@@ -46,7 +46,7 @@ public class NPOrcaBehaviour : MonoBehaviour
     }
     void FindPlayer()
     {
-        if (Growth._growthStage >= 4 && Vector3.Distance(_player.transform.position, transform.position) < _maxDetectionDistance && _player.transform.tag == "Shark")
+        if (Growth._growthStage >= 4 && Vector3.Distance(_player.transform.position, transform.position) < _maxDetectionDistance && _player.layer == 12)
         {
             Debug.Log("In range");
             transform.position = Vector3.MoveTowards(transform.position, _player.transform.position, _speed * Time.deltaTime);

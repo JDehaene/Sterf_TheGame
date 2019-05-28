@@ -36,7 +36,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4371872750602282}
-  - component: {fileID: 64418907794518620}
   - component: {fileID: 143250949684562304}
   - component: {fileID: 114005730732789530}
   m_Layer: 0
@@ -46,49 +45,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!1 &1452807084784730
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 4545230609142280}
-  m_Layer: 0
-  m_Name: CamResetPoint
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!1 &1639209498633516
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 4263646647446106}
-  m_Layer: 0
-  m_Name: CamCenter
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &4263646647446106
-Transform:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1639209498633516}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 4371872750602282}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4323701851881268
 Transform:
   m_ObjectHideFlags: 1
@@ -108,29 +64,14 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1313664503342244}
-  m_LocalRotation: {x: 0, y: 0.16995147, z: 0, w: 0.9854524}
+  m_LocalRotation: {x: 0, y: -0.18086241, z: 0, w: 0.9835084}
   m_LocalPosition: {x: 0, y: 1, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 25, y: 25, z: 25}
   m_Children:
   - {fileID: 4323701851881268}
-  - {fileID: 4545230609142280}
-  - {fileID: 4263646647446106}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 19.57, z: 0}
---- !u!4 &4545230609142280
-Transform:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1452807084784730}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.59, z: -5.35}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 4371872750602282}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -20.84, z: 0}
 --- !u!23 &23359364338486898
 MeshRenderer:
   m_ObjectHideFlags: 1
@@ -173,20 +114,6 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1140509043622004}
   m_Mesh: {fileID: 4300000, guid: 5c5f756982836f047a5dbce38f51e687, type: 3}
---- !u!64 &64418907794518620
-MeshCollider:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1313664503342244}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 0
-  m_CookingOptions: 14
-  m_SkinWidth: 0.01
-  m_Mesh: {fileID: 0}
 --- !u!114 &114005730732789530
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -202,15 +129,19 @@ MonoBehaviour:
   Cam: {fileID: 0}
   _player: {fileID: 1140509043622004}
   _acceleration: 15
-  _heightSpeed: 0.04
-  _maxSpeed: 0.15
-  _swimmingAnimSpeed: 5
-  _rotationSpeed: 55
+  _heightSpeed: 3
+  _maxSpeed: 3
+  _foodName: Shrimp
+  _horizRotationSpeed: 50
+  _vertRotationSpeed: 50
   _dragOnGround: 0.1
   _turnSpeedLimiter: 0.001
   _resetRotation: 20
   _resetRotationSpeed: 5
   _collisionDistance: 3
+  _gravity: 0.05
+  _affectedByGravity: 0
+  _camPosOffset: 2
 --- !u!143 &143250949684562304
 CharacterController:
   m_ObjectHideFlags: 1

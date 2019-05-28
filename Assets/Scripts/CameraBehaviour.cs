@@ -28,18 +28,12 @@ public class CameraBehaviour : MonoBehaviour
     private Vector3 _cameraMovingVelocity = Vector3.zero;
     public bool _resetCameraBool = false;
 
-
-    [SerializeField] private Transform target;
-    [SerializeField] private float bumperDistanceCheck = 2.5f; // length of bumper ray
-    [SerializeField] private Vector3 _bumpOffset;
     [SerializeField] private float _dampSpeed;
-
 
     void Update()
     {
         _targetPlayer = GameObject.FindGameObjectWithTag("Player");
         _targetRotation = Quaternion.Euler(_targetPlayer.transform.eulerAngles.x, _targetPlayer.transform.eulerAngles.y, 0);
-        
         HandleInputs();
         SmoothFollowAlong();     
         TurnCamera();
@@ -61,6 +55,7 @@ public class CameraBehaviour : MonoBehaviour
 
 
     }
+
 
     private void SmoothFollowAlong()
     {

@@ -20,20 +20,25 @@ public class BaseBehaviour : MonoBehaviour
     [SerializeField] private float _acceleration;
     [SerializeField] private float _heightSpeed;
     [SerializeField] private float _maxSpeed;
-    [SerializeField] private float _swimmingAnimSpeed;
 
-    [SerializeField] private float _rotationSpeed;
+    [SerializeField] private string _foodName;
+    [SerializeField] private float _horizRotationSpeed;
+    [SerializeField] private float _vertRotationSpeed;
     [SerializeField] private float _dragOnGround;
     [SerializeField] private float _turnSpeedLimiter;
     [SerializeField] private float _resetRotation;
     [SerializeField] private float _resetRotationSpeed;
     [SerializeField] private float _collisionDistance;
-
+    [SerializeField] private float _gravity;
+    [SerializeField] private bool _affectedByGravity;
+    [SerializeField] private float _camPosOffset;
 
     void Start()
     {
         _c = GetComponent<CharacterController>();
         Cam = GameObject.FindObjectOfType<CameraBehaviour>();
+
+        CameraPlacement();
     }
 
     void Update()
@@ -44,8 +49,8 @@ public class BaseBehaviour : MonoBehaviour
         ForwardVelocity();
         Turning();
         AscendDescend();
-        MaxFlyingSpeed();
-
+        MaxSwimnmingSpeed();
+        ApplyGravity();
 
         _c.Move(_velocity);
         CheckSituation();
@@ -72,14 +77,12 @@ public class BaseBehaviour : MonoBehaviour
         }
 
     }
-    void MaxFlyingSpeed()
+    void MaxSwimnmingSpeed()
     {
-        //Vector3 yVelocity = Vector3.Scale(_velocity, new Vector3(0, , 0));
         Vector3 xyzVelocity = Vector3.Scale(_velocity, new Vector3(1, 1, 1));
 
 
         Vector3 clampedXyzVelocity = Vector3.ClampMagnitude(xyzVelocity, _maxSpeed);
-        //Vector3 clampedYVelocity = Vector3.ClampMagnitude(yVelocity, _heightSpeed);
 
         _velocity = clampedXyzVelocity;
     }
@@ -88,7 +91,7 @@ public class BaseBehaviour : MonoBehaviour
         if (Mathf.Abs(_horizInputL) > 0.1f)
         {
             CheckDirection();
-            transform.eulerAngles += new Vector3(0, _horizInputL * _rotationSpeed * Time.deltaTime, 0);
+            transform.eulerAngles += new Vector3(0, _horizInputL * _horizRotationSpeed * Time.deltaTime, 0);
             _velocity += transform.forward * _acceleration * _turnSpeedLimiter * Time.deltaTime;
         }
     }
@@ -96,7 +99,7 @@ public class BaseBehaviour : MonoBehaviour
     {
         if (Mathf.Abs(_vertInputL) > 0.9f)
         {
-            float angle = _vertInputL * _rotationSpeed * Time.deltaTime;
+            float angle = _vertInputL * _vertRotationSpeed * Time.deltaTime;
             transform.rotation *= Quaternion.AngleAxis(angle, Vector3.left);
         }
     }
@@ -124,7 +127,7 @@ public class BaseBehaviour : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
-        if (other.gameObject.tag == "Shrimp")
+        if (other.gameObject.tag == _foodName)
         {
             Eat(other.gameObject);
         }
@@ -145,6 +148,18 @@ public class BaseBehaviour : MonoBehaviour
             CollisionReset();
     }
 
+    void ApplyGravity()
+    {
+        if (!_c.isGrounded && _affectedByGravity)
+            _velocity -= Vector3.down * _gravity * Time.deltaTime;
+    }
+
+    void CameraPlacement()
+    {
+        float _camposZ = Camera.main.transform.localPosition.z;
+
+        Camera.main.transform.localPosition = new Vector3(0, 0, _camposZ * _camPosOffset);
+    }
 }
 
 

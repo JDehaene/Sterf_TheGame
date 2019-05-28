@@ -24,7 +24,7 @@ GameObject:
   - component: {fileID: 114763234936369424}
   m_Layer: 0
   m_Name: Garnaal
-  m_TagString: Shrimp
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -41,37 +41,7 @@ GameObject:
   - component: {fileID: 23197869688450790}
   m_Layer: 0
   m_Name: Garnaaljen
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!1 &1475478549559900
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 4729239221093426}
-  m_Layer: 0
-  m_Name: TargetPos
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!1 &1887431375799510
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 4904839165996328}
-  m_Layer: 0
-  m_Name: PlayerPos
-  m_TagString: Untagged
+  m_TagString: Shrimp
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -87,36 +57,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4957819236846464}
-  - {fileID: 4904839165996328}
-  - {fileID: 4729239221093426}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!4 &4729239221093426
-Transform:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1475478549559900}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.82, z: -1.18}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 4312606951791470}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!4 &4904839165996328
-Transform:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1887431375799510}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.19, z: 1.05}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 4312606951791470}
-  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4957819236846464
 Transform:
@@ -198,13 +140,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f50289409af34547935ac3aac6a5bd7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _acceleration: 1
-  _turnSpeed: 20
-  _maxSpeed: 0.02
-  _player: {fileID: 1261664775715998}
-  _gravity: -0.1
-  _dragOnGround: 0.5
   Growth: {fileID: 114225111770727732, guid: 1267717944a89d24985a345aa11460d1, type: 2}
+  Cam: {fileID: 0}
+  _player: {fileID: 1261664775715998}
+  _acceleration: 15
+  _heightSpeed: 2.5
+  _maxSpeed: 2.5
+  _foodName: Plankton
+  _horizRotationSpeed: 50
+  _vertRotationSpeed: 0
+  _dragOnGround: 0.3
+  _turnSpeedLimiter: 0.001
+  _resetRotation: 20
+  _resetRotationSpeed: 5
+  _collisionDistance: 3
+  _gravity: -0.05
+  _affectedByGravity: 1
+  _camPosOffset: 0
 --- !u!143 &143157258556815576
 CharacterController:
   m_ObjectHideFlags: 1

@@ -22,9 +22,9 @@ GameObject:
   - component: {fileID: 64085932270768210}
   - component: {fileID: 143839506267422310}
   - component: {fileID: 114260217423192638}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Zeehond
-  m_TagString: Seal
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -37,7 +37,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4540732201456018}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: TargetPos
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -52,7 +52,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4279357139502356}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: PlayerPos
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -69,7 +69,7 @@ GameObject:
   - component: {fileID: 4783428754239800}
   - component: {fileID: 33981343994500866}
   - component: {fileID: 23467908801086746}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Seal
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -108,9 +108,9 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1459498439516672}
-  m_LocalRotation: {x: -0, y: -0.9996283, z: -0, w: 0.02726264}
-  m_LocalPosition: {x: -1126.0342, y: -169.7, z: -1621.2286}
-  m_LocalScale: {x: 50, y: 50, z: 50}
+  m_LocalRotation: {x: -0, y: -0.9996283, z: -0, w: 0.027262643}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 40, y: 40, z: 40}
   m_Children:
   - {fileID: 4783428754239800}
   - {fileID: 4279357139502356}
@@ -198,13 +198,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: df923381d759248419cfb0754ede2d9e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _acceleration: 15
-  _heightSpeed: 6
-  _turnSpeed: 25
-  _maxSpeed: 6
-  _player: {fileID: 1459498439516672}
   Growth: {fileID: 114225111770727732, guid: 1267717944a89d24985a345aa11460d1, type: 2}
-  _dragOnGround: 0.15
+  Cam: {fileID: 0}
+  _player: {fileID: 1459498439516672}
+  _acceleration: 15
+  _heightSpeed: 3.5
+  _maxSpeed: 3.5
+  _foodName: Fish
+  _horizRotationSpeed: 50
+  _vertRotationSpeed: 50
+  _dragOnGround: 0.1
+  _turnSpeedLimiter: 0.001
+  _resetRotation: 20
+  _resetRotationSpeed: 5
+  _collisionDistance: 3
+  _gravity: 0.05
+  _affectedByGravity: 0
+  _camPosOffset: 2
 --- !u!143 &143839506267422310
 CharacterController:
   m_ObjectHideFlags: 1

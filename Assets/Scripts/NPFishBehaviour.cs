@@ -20,14 +20,14 @@ public class NPFishBehaviour : MonoBehaviour
         Growth = (GrowthTrackingBehaviour)FindObjectOfType(typeof(GrowthTrackingBehaviour));
         if (Growth._animalIndex == 0)
         {
-            _player = GameObject.Find("Garnaal(Clone)");
+            _player = GameObject.Find("Garnaal");
             FindPlayer();
         }
     }
 
     private void OnTriggerStay(Collider other)
     {
-        if (other.gameObject.tag == "Shrimp")
+        if (other.gameObject.layer == 9 && Growth._growthStage >= 4)
         {
             KillPlayer(other.gameObject);
         }
@@ -48,7 +48,7 @@ public class NPFishBehaviour : MonoBehaviour
     }
     void FindPlayer()
     {
-        if (Growth._growthStage >= 4 && Vector3.Distance(_player.transform.position,transform.position) < _maxDetectionDistance && _player.transform.tag == "Shrimp")
+        if (Growth._growthStage >= 4 && Vector3.Distance(_player.transform.position,transform.position) < _maxDetectionDistance && _player.layer == 9)
         {
             transform.position = Vector3.MoveTowards(transform.position, _player.transform.position, _speed * Time.deltaTime);
             transform.LookAt(_player.transform);

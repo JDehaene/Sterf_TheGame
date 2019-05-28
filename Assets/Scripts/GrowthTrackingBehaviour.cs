@@ -14,7 +14,6 @@ public class GrowthTrackingBehaviour : MonoBehaviour {
 
     void Update ()
     {
-        Debug.Log(_animalIndex);
         SpawnAnimal();
     }
 
@@ -23,7 +22,7 @@ public class GrowthTrackingBehaviour : MonoBehaviour {
         if(_growthStage >= 4 && _playerDead)
         {
             _animalIndex++;
-            Instantiate(_Animals[_animalIndex]);
+            Instantiate(_Animals[_animalIndex],_spawnLocation.position,transform.rotation);
             
             _growthStage = 0;
             _playerDead = false;           
