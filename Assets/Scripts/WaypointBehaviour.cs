@@ -28,10 +28,10 @@ public class WaypointBehaviour : MonoBehaviour
             if (_index >= Waypoints.Length - 1)
             {
                 _index = -1;
-            }
+            }           
         }
+        transform.Translate(Vector3.forward * _swimmingSpeed * Time.deltaTime);
         _wantedRotation = Quaternion.LookRotation(Waypoints[_index + 1].position - transform.position, Vector3.up);
         transform.rotation = Quaternion.Slerp(transform.rotation, _wantedRotation,Time.deltaTime);
-        transform.position = Vector3.MoveTowards(transform.position, Waypoints[_index + 1].position, _swimmingSpeed * Time.deltaTime);
     }
 }
