@@ -205,8 +205,8 @@ MonoBehaviour:
   _heightSpeed: 4
   _maxSpeed: 4
   _foodName: Shark
-  _horizRotationSpeed: 50
-  _vertRotationSpeed: 50
+  _horizRotationSpeed: 70
+  _vertRotationSpeed: 70
   _dragOnGround: 0.1
   _turnSpeedLimiter: 0.001
   _resetRotation: 25

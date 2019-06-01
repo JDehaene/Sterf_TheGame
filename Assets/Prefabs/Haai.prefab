@@ -132,8 +132,8 @@ MonoBehaviour:
   _heightSpeed: 3
   _maxSpeed: 3.5
   _foodName: Seal
-  _horizRotationSpeed: 50
-  _vertRotationSpeed: 50
+  _horizRotationSpeed: 70
+  _vertRotationSpeed: 70
   _dragOnGround: 0.1
   _turnSpeedLimiter: 0.001
   _resetRotation: 20
@@ -141,7 +141,7 @@ MonoBehaviour:
   _collisionDistance: 10
   _gravity: 0
   _affectedByGravity: 0
-  _camPosOffset: 1
+  _camPosOffset: 2
 --- !u!143 &143683958197714112
 CharacterController:
   m_ObjectHideFlags: 1

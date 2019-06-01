@@ -202,11 +202,11 @@ MonoBehaviour:
   Cam: {fileID: 0}
   _player: {fileID: 1459498439516672}
   _acceleration: 15
-  _heightSpeed: 3.5
-  _maxSpeed: 3.5
+  _heightSpeed: 3.8
+  _maxSpeed: 3.8
   _foodName: Fish
-  _horizRotationSpeed: 50
-  _vertRotationSpeed: 50
+  _horizRotationSpeed: 70
+  _vertRotationSpeed: 70
   _dragOnGround: 0.1
   _turnSpeedLimiter: 0.001
   _resetRotation: 20

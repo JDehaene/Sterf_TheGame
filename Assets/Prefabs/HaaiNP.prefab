@@ -155,6 +155,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Growth: {fileID: 0}
   _player: {fileID: 0}
+  _maxDetectionDistance: 200
 --- !u!114 &114450258719431440
 MonoBehaviour:
   m_ObjectHideFlags: 1

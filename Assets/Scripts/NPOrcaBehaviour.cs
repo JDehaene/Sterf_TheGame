@@ -10,6 +10,7 @@ public class NPOrcaBehaviour : MonoBehaviour
     [SerializeField]
     private GameObject _player;
     private float _speed = 2f;
+    [SerializeField]
     private float _maxDetectionDistance = 5;
 
     private void Update()

@@ -167,3 +167,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Growth: {fileID: 114225111770727732, guid: 1267717944a89d24985a345aa11460d1, type: 2}
   _player: {fileID: 0}
+  _maxDetectionDistance: 250
