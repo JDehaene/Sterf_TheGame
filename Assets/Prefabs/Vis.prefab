@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4323701851881268}
   - component: {fileID: 33967841368644978}
   - component: {fileID: 23359364338486898}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Viske
   m_TagString: Fish
   m_Icon: {fileID: 0}
@@ -38,7 +38,7 @@ GameObject:
   - component: {fileID: 4371872750602282}
   - component: {fileID: 143250949684562304}
   - component: {fileID: 114005730732789530}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Vis
   m_TagString: Player
   m_Icon: {fileID: 0}

@@ -40,7 +40,6 @@ public class NPSealBehaviour : MonoBehaviour
 
         if (_timeUntilDeath <= 0)
         {
-            Debug.Log("Ded");
             Growth._playerDead = true;
             Destroy(food);
         }
@@ -49,7 +48,6 @@ public class NPSealBehaviour : MonoBehaviour
     {
         if (Growth._growthStage >= 4 && Vector3.Distance(_player.transform.position, transform.position) < _maxDetectionDistance && _player.layer == 10)
         {
-            Debug.Log("In range");
             transform.position = Vector3.MoveTowards(transform.position, _player.transform.position, _speed * Time.deltaTime);
             transform.LookAt(_player.transform);
         }

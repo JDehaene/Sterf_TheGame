@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4471527227144786}
   - component: {fileID: 143683958197714112}
   - component: {fileID: 114529063707877228}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Haai
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -38,7 +38,7 @@ GameObject:
   - component: {fileID: 4307915381005216}
   - component: {fileID: 33548092512133304}
   - component: {fileID: 23774996019282688}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Shark
   m_TagString: Shark
   m_Icon: {fileID: 0}
