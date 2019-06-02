@@ -66,7 +66,7 @@ Transform:
   m_GameObject: {fileID: 1018577522312394}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 60, y: 60, z: 60}
+  m_LocalScale: {x: 30, y: 30, z: 30}
   m_Children:
   - {fileID: 4307915381005216}
   m_Father: {fileID: 0}
@@ -130,7 +130,7 @@ MonoBehaviour:
   _player: {fileID: 1801067396403850}
   _acceleration: 15
   _heightSpeed: 3
-  _maxSpeed: 4
+  _maxSpeed: 5
   _foodName: Seal
   _horizRotationSpeed: 60
   _vertRotationSpeed: 60
@@ -141,7 +141,7 @@ MonoBehaviour:
   _collisionDistance: 10
   _gravity: 0
   _affectedByGravity: 0
-  _camPosOffset: 2.5
+  _camPosOffset: 1.5
 --- !u!143 &143683958197714112
 CharacterController:
   m_ObjectHideFlags: 1

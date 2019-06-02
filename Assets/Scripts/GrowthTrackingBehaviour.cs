@@ -9,9 +9,8 @@ public class GrowthTrackingBehaviour : MonoBehaviour {
     public int _growthStage;
 
     public bool _playerDead;
-    [SerializeField]
-    private Transform _spawnLocation;
-
+    [SerializeField] private Transform _spawnLocation;
+    [SerializeField] private GameObject _cam;
     void Update ()
     {
         SpawnAnimal();
@@ -23,7 +22,7 @@ public class GrowthTrackingBehaviour : MonoBehaviour {
         {
             _animalIndex++;
             Instantiate(_Animals[_animalIndex],_spawnLocation.position,transform.rotation);
-            
+            _cam.transform.position = _spawnLocation.position;
             _growthStage = 0;
             _playerDead = false;           
         }

@@ -13,12 +13,10 @@ public class NPFishBehaviour : MonoBehaviour
     [SerializeField]
     private float _maxDetectionDistance;
 
-    public WaypointBehaviour WP;
-
     private void Update()
     {
         Growth = (GrowthTrackingBehaviour)FindObjectOfType(typeof(GrowthTrackingBehaviour));
-        if (Growth._animalIndex == 0)
+        if (!Growth._playerDead && Growth._animalIndex == 0)
         {
             _player = GameObject.Find("Garnaal");
             FindPlayer();

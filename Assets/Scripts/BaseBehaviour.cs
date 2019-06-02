@@ -121,8 +121,6 @@ public class BaseBehaviour : MonoBehaviour
             _deflectorValue = -5;
         if (_horizInputL > 0.5f)
             _deflectorValue = 5;
-
-        Debug.Log(_deflectorValue);
     }
 
     private void OnTriggerStay(Collider other)

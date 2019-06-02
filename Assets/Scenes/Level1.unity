@@ -20176,6 +20176,7 @@ MonoBehaviour:
   _smoothingSpeed: 400
   _smoothTime: 0.2
   _rotatingSpeed: 60
+  _dampSpeed: 1
   _maxDistance: 0.01
   _resetCamSpeed: 3
   _resetCameraTimer: 5
@@ -20183,7 +20184,6 @@ MonoBehaviour:
   _isMoving: 0
   _isTurningAround: 0
   _resetCameraBool: 0
-  _dampSpeed: 1
 --- !u!4 &146894248
 Transform:
   m_ObjectHideFlags: 0
@@ -41108,6 +41108,11 @@ Prefab:
       propertyPath: _animalIndex
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114225111770727732, guid: 1267717944a89d24985a345aa11460d1,
+        type: 2}
+      propertyPath: _cam
+      value: 
+      objectReference: {fileID: 146894246}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1267717944a89d24985a345aa11460d1, type: 2}
   m_IsPrefabAsset: 0
@@ -46583,40 +46588,6 @@ Prefab:
     - target: {fileID: 4312606951791470, guid: 731a4fd0b96aaf34ea037b2061ff2747, type: 2}
       propertyPath: m_RootOrder
       value: 28
-      objectReference: {fileID: 0}
-    - target: {fileID: 114763234936369424, guid: 731a4fd0b96aaf34ea037b2061ff2747,
-        type: 2}
-      propertyPath: _camPosOffset
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4312606951791470, guid: 731a4fd0b96aaf34ea037b2061ff2747, type: 2}
-      propertyPath: m_LocalScale.x
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 4312606951791470, guid: 731a4fd0b96aaf34ea037b2061ff2747, type: 2}
-      propertyPath: m_LocalScale.y
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 4312606951791470, guid: 731a4fd0b96aaf34ea037b2061ff2747, type: 2}
-      propertyPath: m_LocalScale.z
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 114763234936369424, guid: 731a4fd0b96aaf34ea037b2061ff2747,
-        type: 2}
-      propertyPath: _gravity
-      value: -1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1261664775715998, guid: 731a4fd0b96aaf34ea037b2061ff2747, type: 2}
-      propertyPath: m_Layer
-      value: 9
-      objectReference: {fileID: 0}
-    - target: {fileID: 1306781974472190, guid: 731a4fd0b96aaf34ea037b2061ff2747, type: 2}
-      propertyPath: m_Layer
-      value: 9
-      objectReference: {fileID: 0}
-    - target: {fileID: 1261664775715998, guid: 731a4fd0b96aaf34ea037b2061ff2747, type: 2}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 731a4fd0b96aaf34ea037b2061ff2747, type: 2}

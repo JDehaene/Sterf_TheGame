@@ -145,7 +145,7 @@ MonoBehaviour:
   _player: {fileID: 1263911893647030}
   _acceleration: 15
   _heightSpeed: 4
-  _maxSpeed: 4
+  _maxSpeed: 5
   _foodName: Shark
   _horizRotationSpeed: 60
   _vertRotationSpeed: 60
@@ -156,7 +156,7 @@ MonoBehaviour:
   _collisionDistance: 3
   _gravity: 0
   _affectedByGravity: 0
-  _camPosOffset: 1
+  _camPosOffset: 1.5
 --- !u!143 &143289215750613380
 CharacterController:
   m_ObjectHideFlags: 1

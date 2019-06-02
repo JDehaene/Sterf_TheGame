@@ -16,7 +16,7 @@ public class NPSealBehaviour : MonoBehaviour
     private void Update()
     {
         Growth = (GrowthTrackingBehaviour)FindObjectOfType(typeof(GrowthTrackingBehaviour));
-        if (Growth._animalIndex == 1)
+        if (!Growth._playerDead && Growth._animalIndex == 1)
         {
             _player = GameObject.Find("Vis(Clone)");
             FindPlayer();
