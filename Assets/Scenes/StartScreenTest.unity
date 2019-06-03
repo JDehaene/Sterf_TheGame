@@ -138914,7 +138914,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_HorizontalAxis: HorizontalL
-  m_VerticalAxis: VerticalL
+  m_VerticalAxis: VerticalUI
   m_SubmitButton: Submit
   m_CancelButton: Cancel
   m_InputActionsPerSecond: 10

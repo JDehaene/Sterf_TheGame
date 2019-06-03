@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 public class StartScreenBehaviour : MonoBehaviour {
-	void Update ()
+
+    private void Start()
     {
-		
-	}
+        Cursor.visible = false;
+    }
 
     public void LoadLevel()
     {
