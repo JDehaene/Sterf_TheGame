@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class UIBehaviour : MonoBehaviour
 {
@@ -15,6 +16,9 @@ public class UIBehaviour : MonoBehaviour
     void Update()
     {
         UpdateAnimalIcon();
+        if (Input.GetButton("GoBackToMenu"))
+            SceneManager.LoadScene("StartScreenTest");
+
     }
     void UpdateAnimalIcon()
     {
