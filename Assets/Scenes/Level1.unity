@@ -20327,7 +20327,7 @@ MonoBehaviour:
   _rotatingSpeed: 60
   _dampSpeed: 1
   _maxDistance: 0.01
-  _resetCamSpeed: 3
+  _resetCamSpeed: 1.5
   _resetCameraTimer: 5
   _clampValues: {x: -70, y: 70}
   _isMoving: 0
